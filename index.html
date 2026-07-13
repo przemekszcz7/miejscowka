@@ -201,6 +201,7 @@
         font-size: 0.8rem;
         box-shadow: 0 0 16px rgba(255, 26, 60, 0.4);
         transition: all 0.2s ease;
+        display: inline-block;
       }
       .nav-btn:hover {
         background: var(--neon-light);
@@ -1452,5 +1453,13 @@
         </div>
       </div>
     </footer>
+    <script>
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          const cb = document.getElementById('nav-open');
+          if (cb) cb.checked = false;
+        });
+      });
+    </script>
   </body>
 </html>

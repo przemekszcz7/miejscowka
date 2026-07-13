@@ -1,0 +1,6 @@
+{
+  "name": "Miejscówka",
+  "description": "Miejscówka — sala imprezowa w Dąbrowie Górniczej. Urodziny, 18-tki, eventy firmowe. Ul. Tysiąclecia 1A. Tel: 516 436 923",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

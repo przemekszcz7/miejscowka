@@ -1,0 +1,1456 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miejscówka – Miejsce na Twoją Imprezę · Dąbrowa Górnicza</title>
+    <meta name="description" content="Miejscówka — sala imprezowa w Dąbrowie Górniczej. Urodziny, 18-tki, eventy firmowe. Ul. Tysiąclecia 1A. Tel: 516 436 923" />
+    <link rel="icon" type="image/jpeg" href="https://i.ibb.co/4Zv5RtDw/498605072-122093122958890390-4899854837198260889-n.jpg" />
+    
+    <!-- Preload critical images for faster page loading -->
+    <link rel="preload" href="https://i.ibb.co/Myvxfh3h/499273989-17846632137478749-2685808911596023416-n.jpg" as="image" />
+    <link rel="preload" href="https://i.ibb.co/4Zv5RtDw/498605072-122093122958890390-4899854837198260889-n.jpg" as="image" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Bebas+Neue&family=Monoton&display=swap" rel="stylesheet" />
+    
+    <style>
+      :root {
+        --page: #1A1210;
+        --surface: #241A16;
+        --surface-light: #F5EEE6;
+        --brick: #6B3A2A;
+        --brick-dark: #4A2818;
+        --neon: #FF1A3C;
+        --neon-light: #FF4560;
+        --wood: #5C3D28;
+        --white: #F0E4D8;
+        --muted: #A89484;
+        --text-dark: #2A1E16;
+      }
+
+      /* Resets & Base */
+      html {
+        scroll-behavior: smooth;
+        box-sizing: border-box;
+      }
+      *, *::before, *::after {
+        box-sizing: inherit;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--page);
+        color: var(--white);
+        font-family: 'Barlow', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      /* Brick Wall CSS Texture */
+      .brick-wall {
+        background-color: var(--brick-dark);
+        background-image:
+          linear-gradient(335deg, var(--brick) 23px, transparent 23px),
+          linear-gradient(155deg, var(--brick) 23px, transparent 23px),
+          linear-gradient(335deg, var(--brick) 23px, transparent 23px),
+          linear-gradient(155deg, var(--brick) 23px, transparent 23px);
+        background-size: 58px 58px;
+        background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+      }
+
+      /* Neon effects */
+      .neon-text {
+        color: var(--neon);
+        text-shadow:
+          0 0 4px rgba(255, 26, 60, 0.8),
+          0 0 11px rgba(255, 26, 60, 0.6),
+          0 0 19px rgba(255, 26, 60, 0.4),
+          0 0 40px rgba(255, 26, 60, 0.3),
+          0 0 80px rgba(255, 26, 60, 0.2);
+      }
+      .neon-text-subtle {
+        color: var(--neon);
+        text-shadow:
+          0 0 2px rgba(255, 26, 60, 0.8),
+          0 0 6px rgba(255, 26, 60, 0.4);
+      }
+
+      /* Layout Elements */
+      .container {
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      .section-label {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 600;
+        font-size: 0.75rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--neon);
+        display: block;
+        margin-bottom: 8px;
+      }
+      .section-title {
+        font-family: 'Bebas Neue', sans-serif;
+        color: var(--white);
+        font-size: clamp(2.2rem, 5vw, 4rem);
+        font-weight: 400;
+        line-height: 1.1;
+        margin: 0;
+        letter-spacing: 0.02em;
+      }
+      .neon-line {
+        height: 2px;
+        width: 56px;
+        background: var(--neon);
+        box-shadow: 0 0 12px rgba(255, 26, 60, 0.5);
+        margin: 16px 0 24px;
+      }
+      .center-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .text-center {
+        text-align: center;
+      }
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 70px;
+        background: rgba(26, 18, 16, 0.96);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(255, 26, 60, 0.25);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+      }
+      .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+      }
+      .logo-img {
+        width: 36px;
+        height: 36px;
+        border-radius: 2px;
+        object-fit: cover;
+      }
+      .logo-text {
+        font-family: 'Monoton', cursive;
+        font-size: 1rem;
+        color: var(--neon);
+      }
+      .nav-cb {
+        display: none;
+      }
+      .nav-burger {
+        display: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--white);
+        z-index: 1001;
+        user-select: none;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      .nav-links a:not(.nav-btn) {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 600;
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
+        color: rgba(240, 228, 216, 0.65);
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+      .nav-links a:not(.nav-btn):hover {
+        color: var(--neon);
+      }
+      .nav-btn {
+        background: var(--neon);
+        color: var(--page);
+        font-family: 'Barlow', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 8px 20px;
+        border-radius: 100px;
+        font-size: 0.8rem;
+        box-shadow: 0 0 16px rgba(255, 26, 60, 0.4);
+        transition: all 0.2s ease;
+      }
+      .nav-btn:hover {
+        background: var(--neon-light);
+        box-shadow: 0 0 20px rgba(255, 26, 60, 0.6);
+        transform: translateY(-1px);
+      }
+
+      /* Hero Section */
+      .hero-section {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: 
+          linear-gradient(to bottom, rgba(26, 18, 16, 0.55) 0%, rgba(26, 18, 16, 0.78) 55%, rgba(26, 18, 16, 0.97) 100%),
+          url('https://i.ibb.co/Myvxfh3h/499273989-17846632137478749-2685808911596023416-n.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-top: 70px;
+      }
+      .hero-content {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 130px 24px 80px;
+        text-align: center;
+      }
+      .hero-label {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 600;
+        color: var(--neon);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.24em;
+        margin-bottom: 24px;
+      }
+      .hero-neon-container {
+        margin-bottom: 32px;
+      }
+      .hero-neon {
+        font-family: 'Monoton', cursive;
+        font-size: clamp(2.5rem, 8vw, 6rem);
+        font-weight: 400;
+        margin: 0;
+        line-height: 1.1;
+      }
+      .hero-neon-sub {
+        font-family: 'Monoton', cursive;
+        font-size: clamp(1rem, 2.5vw, 1.6rem);
+        color: var(--neon-light);
+        text-shadow: 0 0 8px rgba(255, 69, 96, 0.5);
+        margin-top: 8px;
+        letter-spacing: 0.05em;
+      }
+      .hero-tagline {
+        font-family: 'Bebas Neue', sans-serif;
+        color: var(--white);
+        font-size: clamp(1.3rem, 3vw, 2rem);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin: 24px 0;
+        font-weight: 400;
+      }
+      .hero-chips {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 40px;
+      }
+      .chip {
+        background: rgba(255, 26, 60, 0.12);
+        border: 1px solid rgba(255, 26, 60, 0.35);
+        border-radius: 100px;
+        padding: 8px 18px;
+        font-family: 'Barlow', sans-serif;
+        font-weight: 500;
+        color: var(--white);
+        font-size: 0.85rem;
+        transition: all 0.2s ease;
+      }
+      .chip:hover {
+        background: rgba(255, 26, 60, 0.2);
+        border-color: var(--neon);
+        transform: translateY(-1px);
+      }
+      .hero-actions {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .btn {
+        font-family: 'Barlow', sans-serif;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 100px;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+        display: inline-block;
+        cursor: pointer;
+        text-align: center;
+      }
+      .btn-primary {
+        background: var(--neon);
+        color: var(--page);
+        font-weight: 700;
+        padding: 14px 32px;
+        box-shadow: 0 0 24px rgba(255, 26, 60, 0.45);
+      }
+      .btn-primary:hover {
+        background: var(--neon-light);
+        box-shadow: 0 0 30px rgba(255, 26, 60, 0.65);
+        transform: translateY(-2px);
+      }
+      .btn-secondary {
+        border: 1.5px solid rgba(255, 26, 60, 0.4);
+        color: var(--white);
+        font-weight: 600;
+        padding: 12.5px 30.5px;
+      }
+      .btn-secondary:hover {
+        border-color: var(--neon);
+        background: rgba(255, 26, 60, 0.05);
+        transform: translateY(-2px);
+      }
+
+      /* About Section */
+      .about-section {
+        position: relative;
+        background-color: var(--surface);
+        border-bottom: 1px solid rgba(255, 26, 60, 0.15);
+        padding: 88px 0;
+        overflow: hidden;
+      }
+      .about-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: var(--brick-dark);
+        background-image:
+          linear-gradient(335deg, var(--brick) 23px, transparent 23px),
+          linear-gradient(155deg, var(--brick) 23px, transparent 23px),
+          linear-gradient(335deg, var(--brick) 23px, transparent 23px),
+          linear-gradient(155deg, var(--brick) 23px, transparent 23px);
+        background-size: 58px 58px;
+        background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+        opacity: 0.15;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .about-section .container {
+        position: relative;
+        z-index: 2;
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 55fr 45fr;
+        gap: 72px;
+        align-items: start;
+      }
+      .about-desc {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.72;
+        color: var(--muted);
+        margin: 0 0 16px;
+      }
+      .about-desc:last-of-type {
+        margin-bottom: 32px;
+      }
+      .features-list {
+        display: flex;
+        flex-direction: column;
+      }
+      .feature-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        border-bottom: 1px solid rgba(255, 26, 60, 0.12);
+        padding: 14px 0;
+      }
+      .feature-row:last-child {
+        border-bottom: none;
+      }
+      .feature-icon {
+        font-size: 1.3rem;
+        flex-shrink: 0;
+      }
+      .feature-text {
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+      }
+      .feature-title {
+        font-family: 'Bebas Neue', sans-serif;
+        color: var(--neon);
+        font-size: 1.15rem;
+        letter-spacing: 0.02em;
+      }
+      .feature-subtitle {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 400;
+        color: var(--muted);
+        font-size: 0.9rem;
+        text-align: right;
+      }
+      .reservation-card {
+        background: var(--page);
+        border: 1px solid rgba(255, 26, 60, 0.25);
+        padding: 32px 28px;
+        border-radius: 2px;
+      }
+      .card-label {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 600;
+        font-size: 0.7rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--neon);
+        display: block;
+      }
+      .card-line {
+        height: 1px;
+        background: rgba(255, 26, 60, 0.2);
+        width: 40px;
+        margin: 12px 0;
+      }
+      .phone-numbers {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .phone-link {
+        font-family: 'Bebas Neue', sans-serif;
+        color: var(--white);
+        font-size: 1.6rem;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        display: inline-block;
+        letter-spacing: 0.05em;
+        line-height: 1.2;
+      }
+      .phone-link:hover {
+        color: var(--neon);
+      }
+      .card-line-small {
+        height: 1px;
+        background: rgba(255, 26, 60, 0.12);
+        margin: 18px 0;
+      }
+      .card-details {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .email-link {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 400;
+        font-size: 0.85rem;
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      .email-link:hover {
+        color: var(--neon);
+      }
+      .address-text {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 400;
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin: 0;
+      }
+
+      /* Gallery Section */
+      .gallery-section {
+        background-color: var(--page);
+        padding: 88px 0;
+      }
+      .gallery-cb {
+        display: none;
+        position: absolute;
+      }
+      .gallery-extra {
+        display: none;
+      }
+      .gallery-cb:checked ~ .gallery-grid .gallery-extra {
+        display: block;
+      }
+      .toggle-less {
+        display: none;
+      }
+      .gallery-cb:checked ~ .gallery-toggle .toggle-more {
+        display: none;
+      }
+      .gallery-cb:checked ~ .gallery-toggle .toggle-less {
+        display: block;
+      }
+      .gallery-grid {
+        columns: 4;
+        column-gap: 8px;
+        margin-top: 16px;
+      }
+      /* Prevent scrolling when lightbox is open */
+      body:has(.zoom-cb:checked) {
+        overflow: hidden;
+      }
+
+      .gallery-item {
+        margin-bottom: 8px;
+        break-inside: avoid;
+        width: 100%;
+        background-color: var(--surface);
+        border-radius: 2px;
+        overflow: hidden;
+        position: relative;
+        min-height: 120px; /* layout placeholder to prevent layout shifts */
+      }
+      .zoom-cb {
+        display: none;
+      }
+      .zoom-trigger {
+        cursor: zoom-in;
+        display: block;
+        width: 100%;
+      }
+      .gallery-item img {
+        width: 100%;
+        display: block;
+        transition: all 0.2s ease;
+        animation: fadeInImg 0.4s ease-out; /* smooth fade-in for faster perceived load */
+      }
+      .gallery-item img:hover {
+        opacity: 0.85;
+        outline: 2px solid var(--neon);
+        outline-offset: -2px;
+      }
+      @keyframes fadeInImg {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      /* Lightbox Overlay */
+      .lightbox-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 10, 8, 0.96);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        z-index: 2000;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        box-sizing: border-box;
+      }
+      .zoom-cb:checked ~ .lightbox-overlay {
+        display: flex;
+      }
+      .lightbox-close-zone {
+        position: absolute;
+        inset: 0;
+        cursor: zoom-out;
+      }
+      .lightbox-content {
+        position: relative;
+        max-width: 95%;
+        max-height: 90vh;
+        z-index: 2001;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: zoomIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .lightbox-content img {
+        max-width: 100%;
+        max-height: 85vh;
+        object-fit: contain;
+        border: 1px solid rgba(255, 26, 60, 0.3);
+        box-shadow: 0 0 40px rgba(255, 26, 60, 0.4);
+        border-radius: 4px;
+        animation: none;
+      }
+      .lightbox-close-btn {
+        position: absolute;
+        top: -45px;
+        right: 0;
+        font-size: 2.5rem;
+        line-height: 1;
+        color: var(--white);
+        cursor: pointer;
+        font-family: Arial, sans-serif;
+        transition: color 0.2s;
+        user-select: none;
+      }
+      .lightbox-close-btn:hover {
+        color: var(--neon);
+      }
+      @keyframes zoomIn {
+        from {
+          transform: scale(0.92);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .gallery-toggle {
+        border: 1px solid rgba(255, 26, 60, 0.4);
+        font-family: 'Barlow', sans-serif;
+        font-weight: 600;
+        color: var(--neon);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 10px 30px;
+        margin: 24px auto 0;
+        display: block;
+        width: fit-content;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        user-select: none;
+        text-align: center;
+      }
+      .gallery-toggle:hover {
+        background: var(--neon);
+        color: var(--page);
+      }
+
+      /* Review Section */
+      .review-section {
+        position: relative;
+      }
+      .review-overlay {
+        background: rgba(26, 18, 16, 0.85);
+        padding: 72px 0;
+      }
+      .review-content {
+        max-width: 640px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .quote-mark {
+        font-family: 'Bebas Neue', sans-serif;
+        color: rgba(255, 26, 60, 0.15);
+        font-size: 6rem;
+        line-height: 0.7;
+        height: 3rem;
+        user-select: none;
+      }
+      .quote-text {
+        font-family: 'Barlow', sans-serif;
+        font-style: italic;
+        font-weight: 400;
+        color: var(--white);
+        font-size: 1.2rem;
+        line-height: 1.7;
+        margin: 0 0 20px;
+      }
+      .neon-line-small {
+        height: 2px;
+        width: 40px;
+        background: var(--neon);
+        box-shadow: 0 0 10px rgba(255, 26, 60, 0.5);
+        margin: 20px auto;
+      }
+      .stars {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 600;
+        color: var(--neon);
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+        margin-bottom: 8px;
+      }
+      .quote-author {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 300;
+        color: var(--muted);
+        font-size: 0.78rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+      .facebook-link {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 600;
+        color: var(--neon);
+        font-size: 0.72rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 20px;
+        transition: all 0.2s ease;
+      }
+      .facebook-link:hover {
+        text-shadow: 0 0 8px rgba(255, 26, 60, 0.6);
+        color: var(--neon-light);
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background-color: var(--surface);
+        border-top: 1px solid rgba(255, 26, 60, 0.15);
+        padding: 88px 0;
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: start;
+      }
+      .contact-desc {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.72;
+        color: var(--muted);
+        margin: 0 0 24px;
+      }
+      .contact-details-list {
+        display: flex;
+        flex-direction: column;
+      }
+      .contact-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 26, 60, 0.12);
+        padding: 16px 0;
+        gap: 16px;
+      }
+      .contact-row:last-child {
+        border-bottom: none;
+      }
+      .contact-row-label {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 600;
+        font-size: 0.68rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        flex-shrink: 0;
+      }
+      .contact-row-value {
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      .phone-val {
+        font-family: 'Bebas Neue', sans-serif;
+        color: var(--white);
+        font-size: 1.25rem;
+        letter-spacing: 0.05em;
+      }
+      .phone-val:hover {
+        color: var(--neon);
+      }
+      .standard-val {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 400;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .standard-val:hover {
+        color: var(--neon);
+      }
+      .fb-val {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 600;
+        color: var(--neon);
+        font-size: 0.95rem;
+      }
+      .fb-val:hover {
+        color: var(--neon-light);
+        text-shadow: 0 0 8px rgba(255, 26, 60, 0.4);
+      }
+      .contact-cta {
+        background: var(--neon);
+        color: var(--page);
+        font-family: 'Barlow', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 14px 32px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 32px;
+        display: block;
+        text-align: center;
+        border-radius: 100px;
+        box-shadow: 0 0 20px rgba(255, 26, 60, 0.4);
+        transition: all 0.2s ease;
+      }
+      .contact-cta:hover {
+        background: var(--neon-light);
+        box-shadow: 0 0 28px rgba(255, 26, 60, 0.6);
+        transform: translateY(-2px);
+      }
+      .map-container {
+        border: 1px solid rgba(255, 26, 60, 0.25);
+        height: 380px;
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      /* Footer Section */
+      .footer-section {
+        position: relative;
+        border-top: 2px solid var(--neon);
+      }
+      .footer-overlay {
+        background: rgba(26, 18, 16, 0.92);
+        padding: 32px 0;
+      }
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .footer-logo-img {
+        width: 28px;
+        height: 28px;
+        border-radius: 2px;
+        object-fit: cover;
+      }
+      .footer-logo-text {
+        font-family: 'Monoton', cursive;
+        font-size: 0.9rem;
+        color: var(--neon);
+      }
+      .footer-city {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 300;
+        color: rgba(240, 228, 216, 0.3);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .footer-copy {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 300;
+        color: rgba(240, 228, 216, 0.15);
+        font-size: 0.75rem;
+      }
+      .footer-line {
+        height: 1px;
+        background: rgba(255, 26, 60, 0.15);
+        margin: 12px 0;
+      }
+      .footer-bottom {
+        text-align: center;
+        font-family: 'Barlow', sans-serif;
+        font-weight: 300;
+        color: rgba(240, 228, 216, 0.18);
+        font-size: 0.78rem;
+        letter-spacing: 0.05em;
+      }
+
+      /* Media Queries */
+      @media (max-width: 900px) {
+        .gallery-grid {
+          columns: 3;
+        }
+      }
+      @media (max-width: 768px) {
+        nav {
+          height: 60px;
+        }
+        .nav-container {
+          padding: 0 24px;
+        }
+        .nav-burger {
+          display: block;
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .nav-links {
+          display: flex;
+          position: fixed;
+          top: 60px;
+          left: 0;
+          width: 100vw;
+          height: calc(100vh - 60px);
+          background: rgba(26, 18, 16, 0.98);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 32px;
+          z-index: 999;
+          padding: 24px;
+          box-sizing: border-box;
+          
+          /* Animation state (Closed) */
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(-20px);
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                      opacity 0.3s ease,
+                      visibility 0.3s ease;
+          pointer-events: none;
+        }
+        /* Mobile links slide up */
+        .nav-links a {
+          opacity: 0;
+          transform: translateY(15px);
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                      opacity 0.4s ease;
+        }
+        .nav-cb:checked ~ .nav-links {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+          pointer-events: auto;
+        }
+        .nav-cb:checked ~ .nav-links a {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .nav-cb:checked ~ .nav-links a:nth-child(1) { transition-delay: 0.1s; }
+        .nav-cb:checked ~ .nav-links a:nth-child(2) { transition-delay: 0.15s; }
+        .nav-cb:checked ~ .nav-links a:nth-child(3) { transition-delay: 0.2s; }
+        .nav-cb:checked ~ .nav-links a:nth-child(4) { transition-delay: 0.25s; }
+
+        .nav-cb:checked ~ .nav-burger::before {
+          content: "×";
+          font-size: 2.2rem;
+        }
+        .nav-cb:checked ~ .nav-burger {
+          transform: rotate(90deg);
+          font-size: 0; /* Hide ≡ when checked */
+        }
+        .nav-links .nav-btn {
+          width: 100%;
+          max-width: 240px;
+          text-align: center;
+        }
+
+        .hero-content {
+          padding: 100px 16px 60px;
+        }
+        .hero-chips {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+          max-width: 440px;
+          margin: 0 auto 32px;
+        }
+        .chip {
+          text-align: center;
+        }
+        .hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+          max-width: 320px;
+          margin: 0 auto;
+        }
+
+        .about-section {
+          padding: 64px 0;
+        }
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+        .about-desc:last-of-type {
+          margin-bottom: 24px;
+        }
+
+        .gallery-section {
+          padding: 64px 0;
+        }
+        .gallery-grid {
+          columns: 2;
+        }
+
+        .contact-section {
+          padding: 64px 0;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+
+        .footer-top {
+          flex-direction: column;
+          text-align: center;
+          gap: 12px;
+        }
+        .footer-logo {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-neon {
+          font-size: clamp(2rem, 10vw, 4rem);
+        }
+        .hero-neon-sub {
+          font-size: 1.1rem;
+        }
+        .gallery-grid {
+          columns: 2;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sticky Nav -->
+    <nav>
+      <div class="nav-container">
+        <a href="#" class="nav-logo">
+          <img src="https://i.ibb.co/4Zv5RtDw/498605072-122093122958890390-4899854837198260889-n.jpg" alt="Miejscówka" class="logo-img" />
+          <span class="logo-text neon-text-subtle">MIEJSCÓWKA</span>
+        </a>
+        
+        <input type="checkbox" id="nav-open" class="nav-cb" />
+        <label for="nav-open" class="nav-burger">≡</label>
+        
+        <div class="nav-links">
+          <a href="#o-nas">O Nas</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#kontakt">Kontakt</a>
+          <a href="#kontakt" class="nav-btn">REZERWUJ</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="hero-label">🎈 Tysiąclecia 1A · Dąbrowa Górnicza</div>
+        <div class="hero-neon-container">
+          <h1 class="hero-neon neon-text">MIEJSCÓWKA</h1>
+          <div class="hero-neon-sub">MIEJSCE NA TWOJĄ IMPREZĘ</div>
+        </div>
+        <h2 class="hero-tagline">JEŚLI LUBISZ IMPREZOWAĆ, TO MAMY COŚ DLA CIEBIE!</h2>
+        
+        <div class="hero-chips">
+          <span class="chip">🎈 Urodziny</span>
+          <span class="chip">🥳 18-tki</span>
+          <span class="chip">🏢 Eventy firmowe</span>
+          <span class="chip">🎉 Wszystkie okazje</span>
+        </div>
+        
+        <div class="hero-actions">
+          <a href="#kontakt" class="btn btn-primary">ZAREZERWUJ TERMIN</a>
+          <a href="#galeria" class="btn btn-secondary">ZOBACZ GALERIĘ</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="o-nas" class="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-left">
+            <span class="section-label">O MIEJSCÓWCE</span>
+            <h2 class="section-title">TWOJA IMPREZA, NASZA PRZESTRZEŃ.</h2>
+            <div class="neon-line"></div>
+            <p class="about-desc">
+              Miejscówka to miejsce stworzone dla ludzi, którzy lubią się bawić. Urodziny, 18-tki, eventy firmowe, wszelkie imprezy okolicznościowe — u nas znajdziesz idealną przestrzeń.
+            </p>
+            <p class="about-desc">
+              Klimatyczne wnętrze, surowe cegły, dobra energia — wszystko czego potrzeba na niezapomnianą imprezę.
+            </p>
+            
+            <div class="features-list">
+              <div class="feature-row">
+                <span class="feature-icon">🎈</span>
+                <div class="feature-text">
+                  <span class="feature-title">URODZINY</span>
+                  <span class="feature-subtitle">świętuj w wyjątkowym klimacie</span>
+                </div>
+              </div>
+              <div class="feature-row">
+                <span class="feature-icon">🥳</span>
+                <div class="feature-text">
+                  <span class="feature-title">18-TKI</span>
+                  <span class="feature-subtitle">impreza, którą zapamiętasz na długo</span>
+                </div>
+              </div>
+              <div class="feature-row">
+                <span class="feature-icon">🏢</span>
+                <div class="feature-text">
+                  <span class="feature-title">EVENTY FIRMOWE</span>
+                  <span class="feature-subtitle">integracje i spotkania firmowe</span>
+                </div>
+              </div>
+              <div class="feature-row">
+                <span class="feature-icon">🎉</span>
+                <div class="feature-text">
+                  <span class="feature-title">WSZYSTKIE OKAZJE</span>
+                  <span class="feature-subtitle">dopasujemy przestrzeń do Twoich potrzeb</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="about-right">
+            <div class="reservation-card">
+              <span class="card-label">REZERWACJE</span>
+              <div class="card-line"></div>
+              <div class="phone-numbers">
+                <a href="tel:516436923" class="phone-link">516 436 923</a>
+                <a href="tel:577637303" class="phone-link">577 637 303</a>
+              </div>
+              <div class="card-line-small"></div>
+              <div class="card-details">
+                <a href="mailto:miejscowkadg@gmail.com" class="email-link">miejscowkadg@gmail.com</a>
+                <p class="address-text">ul. Tysiąclecia 1A, Dąbrowa Górnicza</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="gallery-section">
+      <div class="container">
+        <span class="section-label text-center">GALERIA</span>
+        <h2 class="section-title text-center">KLIMAT MIEJSCÓWKI</h2>
+        <div class="neon-line center-auto"></div>
+        
+        <input type="checkbox" id="gallery-expand" class="gallery-cb" />
+        
+        <div class="gallery-grid">
+          <!-- Always visible (1-8) -->
+          <div class="gallery-item">
+            <input type="checkbox" id="zoom-1" class="zoom-cb" />
+            <label for="zoom-1" class="zoom-trigger">
+              <img src="https://i.ibb.co/xq1fVQyD/526207057-122129044622890390-1226507776667338499-n.jpg" alt="Miejscówka impreza 1" loading="lazy" decoding="async" />
+            </label>
+            <div class="lightbox-overlay">
+              <label for="zoom-1" class="lightbox-close-zone"></label>
+              <div class="lightbox-content">
+                <img src="https://i.ibb.co/xq1fVQyD/526207057-122129044622890390-1226507776667338499-n.jpg" alt="Miejscówka impreza 1" loading="lazy" decoding="async" />
+                <label for="zoom-1" class="lightbox-close-btn">×</label>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <input type="checkbox" id="zoom-2" class="zoom-cb" />
+            <label for="zoom-2" class="zoom-trigger">
+              <img src="https://i.ibb.co/vvQV9WzB/525896031-122129045258890390-21428592319951670-n.jpg" alt="Miejscówka impreza 2" loading="lazy" decoding="async" />
+            </label>
+            <div class="lightbox-overlay">
+              <label for="zoom-2" class="lightbox-close-zone"></label>
+              <div class="lightbox-content">
+                <img src="https://i.ibb.co/vvQV9WzB/525896031-122129045258890390-21428592319951670-n.jpg" alt="Miejscówka impreza 2" loading="lazy" decoding="async" />
+                <label for="zoom-2" class="lightbox-close-btn">×</label>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <input type="checkbox" id="zoom-3" class="zoom-cb" />
+            <label for="zoom-3" class="zoom-trigger">
+              <img src="https://i.ibb.co/tpsBH4H6/525857570-122129045648890390-4315535850472136462-n.jpg" alt="Miejscówka impreza 3" loading="lazy" decoding="async" />
+            </label>
+            <div class="lightbox-overlay">
+              <label for="zoom-3" class="lightbox-close-zone"></label>
+              <div class="lightbox-content">
+                <img src="https://i.ibb.co/tpsBH4H6/525857570-122129045648890390-4315535850472136462-n.jpg" alt="Miejscówka impreza 3" loading="lazy" decoding="async" />
+                <label for="zoom-3" class="lightbox-close-btn">×</label>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <input type="checkbox" id="zoom-4" class="zoom-cb" />
+            <label for="zoom-4" class="zoom-trigger">
+              <img src="https://i.ibb.co/3Yybmz0W/504380831-122129044832890390-4537511342625948642-n.jpg" alt="Miejscówka impreza 4" loading="lazy" decoding="async" />
+            </label>
+            <div class="lightbox-overlay">
+              <label for="zoom-4" class="lightbox-close-zone"></label>
+              <div class="lightbox-content">
+                <img src="https://i.ibb.co/3Yybmz0W/504380831-122129044832890390-4537511342625948642-n.jpg" alt="Miejscówka impreza 4" loading="lazy" decoding="async" />
+                <label for="zoom-4" class="lightbox-close-btn">×</label>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <input type="checkbox" id="zoom-5" class="zoom-cb" />
+            <label for="zoom-5" class="zoom-trigger">
+              <img src="https://i.ibb.co/W4GMx5w7/526130591-122129045420890390-7888364860345086724-n.jpg" alt="Miejscówka impreza 5" loading="lazy" decoding="async" />
+            </label>
+            <div class="lightbox-overlay">
+              <label for="zoom-5" class="lightbox-close-zone"></label>
+              <div class="lightbox-content">
+                <img src="https://i.ibb.co/W4GMx5w7/526130591-122129045420890390-7888364860345086724-n.jpg" alt="Miejscówka impreza 5" loading="lazy" decoding="async" />
+                <label for="zoom-5" class="lightbox-close-btn">×</label>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <input type="checkbox" id="zoom-6" class="zoom-cb" />
+            <label for="zoom-6" class="zoom-trigger">
+              <img src="https://i.ibb.co/Nd3MPfB0/525754299-122129045042890390-5597111195426169697-n.jpg" alt="Miejscówka impreza 6" loading="lazy" decoding="async" />
+            </label>
+            <div class="lightbox-overlay">
+              <label for="zoom-6" class="lightbox-close-zone"></label>
+              <div class="lightbox-content">
+                <img src="https://i.ibb.co/Nd3MPfB0/525754299-122129045042890390-5597111195426169697-n.jpg" alt="Miejscówka impreza 6" loading="lazy" decoding="async" />
+                <label for="zoom-6" class="lightbox-close-btn">×</label>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <input type="checkbox" id="zoom-7" class="zoom-cb" />
+            <label for="zoom-7" class="zoom-trigger">
+              <img src="https://i.ibb.co/KzyGGP5n/525439497-122129045570890390-7908598178922099767-n.jpg" alt="Miejscówka impreza 7" loading="lazy" decoding="async" />
+            </label>
+            <div class="lightbox-overlay">
+              <label for="zoom-7" class="lightbox-close-zone"></label>
+              <div class="lightbox-content">
+                <img src="https://i.ibb.co/KzyGGP5n/525439497-122129045570890390-7908598178922099767-n.jpg" alt="Miejscówka impreza 7" loading="lazy" decoding="async" />
+                <label for="zoom-7" class="lightbox-close-btn">×</label>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <input type="checkbox" id="zoom-8" class="zoom-cb" />
+            <label for="zoom-8" class="zoom-trigger">
+              <img src="https://i.ibb.co/zVx6pxVr/526911949-122129044682890390-179199864033479465-n.jpg" alt="Miejscówka impreza 8" loading="lazy" decoding="async" />
+            </label>
+            <div class="lightbox-overlay">
+              <label for="zoom-8" class="lightbox-close-zone"></label>
+              <div class="lightbox-content">
+                <img src="https://i.ibb.co/zVx6pxVr/526911949-122129044682890390-179199864033479465-n.jpg" alt="Miejscówka impreza 8" loading="lazy" decoding="async" />
+                <label for="zoom-8" class="lightbox-close-btn">×</label>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Hidden (9-16) -->
+          <div class="gallery-item gallery-extra">
+            <input type="checkbox" id="zoom-9" class="zoom-cb" />
+            <label for="zoom-9" class="zoom-trigger">
+              <img src="https://i.ibb.co/JRKshYbH/525171870-122129044748890390-5233134587672640607-n.jpg" alt="Miejscówka impreza 9" loading="lazy" decoding="async" />
+            </label>
+            <div class="lightbox-overlay">
+              <label for="zoom-9" class="lightbox-close-zone"></label>
+              <div class="lightbox-content">
+                <img src="https://i.ibb.co/JRKshYbH/525171870-122129044748890390-5233134587672640607-n.jpg" alt="Miejscówka impreza 9" loading="lazy" decoding="async" />
+                <label for="zoom-9" class="lightbox-close-btn">×</label>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item gallery-extra">
+            <input type="checkbox" id="zoom-10" class="zoom-cb" />
+            <label for="zoom-10" class="zoom-trigger">
+              <img src="https://i.ibb.co/x8tdxdMK/498674009-17846632221478749-1495903708460509874-n.jpg" alt="Miejscówka impreza 10" loading="lazy" decoding="async" />
+            </label>
+            <div class="lightbox-overlay">
+              <label for="zoom-10" class="lightbox-close-zone"></label>
+              <div class="lightbox-content">
+                <img src="https://i.ibb.co/x8tdxdMK/498674009-17846632221478749-1495903708460509874-n.jpg" alt="Miejscówka impreza 10" loading="lazy" decoding="async" />
+                <label for="zoom-10" class="lightbox-close-btn">×</label>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item gallery-extra">
+            <input type="checkbox" id="zoom-11" class="zoom-cb" />
+            <label for="zoom-11" class="zoom-trigger">
+              <img src="https://i.ibb.co/1tN93pPS/498744853-17846632230478749-2841999308632495936-n.jpg" alt="Miejscówka impreza 11" loading="lazy" decoding="async" />
+            </label>
+            <div class="lightbox-overlay">
+              <label for="zoom-11" class="lightbox-close-zone"></label>
+              <div class="lightbox-content">
+                <img src="https://i.ibb.co/1tN93pPS/498744853-17846632230478749-2841999308632495936-n.jpg" alt="Miejscówka impreza 11" loading="lazy" decoding="async" />
+                <label for="zoom-11" class="lightbox-close-btn">×</label>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item gallery-extra">
+            <input type="checkbox" id="zoom-12" class="zoom-cb" />
+            <label for="zoom-12" class="zoom-trigger">
+              <img src="https://i.ibb.co/8nVyfNvp/499536226-17846632161478749-5084571256003565367-n.jpg" alt="Miejscówka impreza 12" loading="lazy" decoding="async" />
+            </label>
+            <div class="lightbox-overlay">
+              <label for="zoom-12" class="lightbox-close-zone"></label>
+              <div class="lightbox-content">
+                <img src="https://i.ibb.co/8nVyfNvp/499536226-17846632161478749-5084571256003565367-n.jpg" alt="Miejscówka impreza 12" loading="lazy" decoding="async" />
+                <label for="zoom-12" class="lightbox-close-btn">×</label>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item gallery-extra">
+            <input type="checkbox" id="zoom-13" class="zoom-cb" />
+            <label for="zoom-13" class="zoom-trigger">
+              <img src="https://i.ibb.co/KzKCCpXx/499546359-17846632260478749-6772325760877306544-n.jpg" alt="Miejscówka impreza 13" loading="lazy" decoding="async" />
+            </label>
+            <div class="lightbox-overlay">
+              <label for="zoom-13" class="lightbox-close-zone"></label>
+              <div class="lightbox-content">
+                <img src="https://i.ibb.co/KzKCCpXx/499546359-17846632260478749-6772325760877306544-n.jpg" alt="Miejscówka impreza 13" loading="lazy" decoding="async" />
+                <label for="zoom-13" class="lightbox-close-btn">×</label>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item gallery-extra">
+            <input type="checkbox" id="zoom-14" class="zoom-cb" />
+            <label for="zoom-14" class="zoom-trigger">
+              <img src="https://i.ibb.co/wZH5ZKR9/499492534-17846632182478749-987279959870892443-n.jpg" alt="Miejscówka impreza 14" loading="lazy" decoding="async" />
+            </label>
+            <div class="lightbox-overlay">
+              <label for="zoom-14" class="lightbox-close-zone"></label>
+              <div class="lightbox-content">
+                <img src="https://i.ibb.co/wZH5ZKR9/499492534-17846632182478749-987279959870892443-n.jpg" alt="Miejscówka impreza 14" loading="lazy" decoding="async" />
+                <label for="zoom-14" class="lightbox-close-btn">×</label>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item gallery-extra">
+            <input type="checkbox" id="zoom-15" class="zoom-cb" />
+            <label for="zoom-15" class="zoom-trigger">
+              <img src="https://i.ibb.co/GfHxrM5h/499790279-17846632242478749-2735756865139991807-n.jpg" alt="Miejscówka impreza 15" loading="lazy" decoding="async" />
+            </label>
+            <div class="lightbox-overlay">
+              <label for="zoom-15" class="lightbox-close-zone"></label>
+              <div class="lightbox-content">
+                <img src="https://i.ibb.co/GfHxrM5h/499790279-17846632242478749-2735756865139991807-n.jpg" alt="Miejscówka impreza 15" loading="lazy" decoding="async" />
+                <label for="zoom-15" class="lightbox-close-btn">×</label>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item gallery-extra">
+            <input type="checkbox" id="zoom-16" class="zoom-cb" />
+            <label for="zoom-16" class="zoom-trigger">
+              <img src="https://i.ibb.co/r27SgKyG/499821611-17846632203478749-5460645258594754017-n.jpg" alt="Miejscówka impreza 16" loading="lazy" decoding="async" />
+            </label>
+            <div class="lightbox-overlay">
+              <label for="zoom-16" class="lightbox-close-zone"></label>
+              <div class="lightbox-content">
+                <img src="https://i.ibb.co/r27SgKyG/499821611-17846632203478749-5460645258594754017-n.jpg" alt="Miejscówka impreza 16" loading="lazy" decoding="async" />
+                <label for="zoom-16" class="lightbox-close-btn">×</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <label for="gallery-expand" class="gallery-toggle">
+          <span class="toggle-more">POKAŻ WSZYSTKIE (16) ↓</span>
+          <span class="toggle-less">ZWIŃ ↑</span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Review Section -->
+    <section class="review-section brick-wall">
+      <div class="review-overlay">
+        <div class="container">
+          <div class="review-content">
+            <div class="quote-mark">“</div>
+            <blockquote class="quote-text">
+              Polecam idealne miejsce jak ktoś potrzebuje zrobić imprezę 🎉
+            </blockquote>
+            <div class="neon-line-small"></div>
+            <div class="quote-author">— GOŚĆ MIEJSCÓWKI</div>
+            <a href="https://www.facebook.com/profile.php?id=61576711700430&sk=reviews" target="_blank" rel="noopener noreferrer" class="facebook-link">WIĘCEJ OPINII NA FACEBOOKU →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="contact-section">
+      <div class="container">
+        <span class="section-label text-center">KONTAKT I DOJAZD</span>
+        <h2 class="section-title text-center">ZAREZERWUJ SWOJĄ IMPREZĘ</h2>
+        <div class="neon-line center-auto"></div>
+        
+        <div class="contact-grid">
+          <div class="contact-left">
+            <p class="contact-desc">
+              Planujesz imprezę? Zadzwoń, napisz lub odwiedź nas na Tysiąclecia 1A w Dąbrowie Górniczej. Znajdziemy termin idealny dla Ciebie.
+            </p>
+            
+            <div class="contact-details-list">
+              <div class="contact-row">
+                <span class="contact-row-label">TELEFON</span>
+                <a href="tel:516436923" class="contact-row-value phone-val">516 436 923</a>
+              </div>
+              <div class="contact-row">
+                <span class="contact-row-label">TELEFON</span>
+                <a href="tel:577637303" class="contact-row-value phone-val">577 637 303</a>
+              </div>
+              <div class="contact-row">
+                <span class="contact-row-label">E-MAIL</span>
+                <a href="mailto:miejscowkadg@gmail.com" class="contact-row-value standard-val">miejscowkadg@gmail.com</a>
+              </div>
+              <div class="contact-row">
+                <span class="contact-row-label">ADRES</span>
+                <span class="contact-row-value standard-val">ul. Tysiąclecia 1A, 41-303 Dąbrowa Górnicza</span>
+              </div>
+              <div class="contact-row">
+                <span class="contact-row-label">FACEBOOK</span>
+                <a href="https://www.facebook.com/profile.php?id=61576711700430" target="_blank" rel="noopener noreferrer" class="contact-row-value fb-val">Miejscówka →</a>
+              </div>
+            </div>
+            
+            <a href="tel:516436923" class="contact-cta">ZADZWOŃ: 516 436 923</a>
+          </div>
+          
+          <div class="contact-right">
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2546.566512707065!2d19.215129612593223!3d50.33733819538253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716d9bd84864e79%3A0x30a8222a5fa268c9!2sSala%20Bankietowa%20Sala%20imprezowa%20%7C%20Miejsc%C3%B3wka!5e0!3m2!1spl!2spl!4v1783931050939!5m2!1spl!2spl" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section brick-wall">
+      <div class="footer-overlay">
+        <div class="container">
+          <div class="footer-top">
+            <div class="footer-logo">
+              <img src="https://i.ibb.co/4Zv5RtDw/498605072-122093122958890390-4899854837198260889-n.jpg" alt="Miejscówka" class="footer-logo-img" />
+              <span class="footer-logo-text neon-text-subtle">MIEJSCÓWKA</span>
+            </div>
+            <div class="footer-city">Dąbrowa Górnicza</div>
+            <div class="footer-copy">© 2026</div>
+          </div>
+          
+          <div class="footer-line"></div>
+          
+          <div class="footer-bottom">
+            516 436 923 · 577 637 303 · miejscowkadg@gmail.com
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
